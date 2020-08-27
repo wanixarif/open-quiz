@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/selectionFragment">
+
+    <fragment
+        android:id="@+id/selectionFragment"
+        android:name="alphasoft.openquiz.SelectionFragment"
+        android:label="fragment_selection"
+        tools:layout="@layout/fragment_selection" >
+        <action
+            android:id="@+id/action_selectionFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="alphasoft.openquiz.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="alphasoft.openquiz.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_pop_including_selectionFragment"
+            app:popUpTo="@id/selectionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="alphasoft.openquiz.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/previousResultsFragment"
+        android:name="alphasoft.openquiz.PreviousResultsFragment"
+        android:label="fragment_previous_results"
+        tools:layout="@layout/fragment_previous_results" />
+</navigation>
